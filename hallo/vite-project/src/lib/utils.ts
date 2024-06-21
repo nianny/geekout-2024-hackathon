@@ -11,4 +11,9 @@ export interface Article {
   content: string;
 }
 
+export interface Topic {
+  topic: string;
+  level: string;
+}
 export type AppStates = "listView" | "articleView" | "topicView" | "bookshelfView"
+

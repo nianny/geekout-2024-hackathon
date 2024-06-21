@@ -1,3 +1,4 @@
+import { useTheme } from "@/components/theme-provider";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -14,11 +15,11 @@ import {
 } from "@/components/ui/sheet";
 import { AppStates } from "@/lib/utils";
 import { AlignRight, Moon, Sun } from "lucide-react";
-
 function MobileOpenSheet(props: { setAppState: (value: AppStates) => void }) {
   const enterTopic = () => {
     props.setAppState("topicView");
   };
+  const { setTheme } = useTheme();
 
   return (
     <Sheet>
@@ -63,13 +64,22 @@ function MobileOpenSheet(props: { setAppState: (value: AppStates) => void }) {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem onClick={() => setTheme("light")}>
+              <DropdownMenuItem
+                className="justify-end"
+                onClick={() => setTheme("light")}
+              >
                 Light
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setTheme("dark")}>
+              <DropdownMenuItem
+                className="justify-end"
+                onClick={() => setTheme("dark")}
+              >
                 Dark
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setTheme("system")}>
+              <DropdownMenuItem
+                className="justify-end"
+                onClick={() => setTheme("system")}
+              >
                 System
               </DropdownMenuItem>
             </DropdownMenuContent>

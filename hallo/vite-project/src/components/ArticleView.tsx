@@ -1,3 +1,4 @@
+import axios from 'axios'
 import {
   Card,
   CardContent,
@@ -18,6 +19,8 @@ export default function ArticleView(props: {
   if (!props.article) {
     return <p>Peepeepoopoo!</p>;
   }
+
+
 
   const handleBack = () => {
     props.setCurArticle(null);
